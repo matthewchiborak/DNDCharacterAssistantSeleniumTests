@@ -138,7 +138,7 @@ public class CharacterCreationTest {
 		driver.findElement(By.id("referenceLinkBox")).sendKeys("https://www.dndbeyond.com/spells/class/sorcerer");
 		driver.findElement(By.id("AddReferenceButton")).click();
 		
-		driver.findElement(By.id("SaveNewCharacterButton")).click();
+		driver.findElement(By.id("SaveCharacterButton")).click();
 		
 		while(!isAlertPresent()) {
 			try {
