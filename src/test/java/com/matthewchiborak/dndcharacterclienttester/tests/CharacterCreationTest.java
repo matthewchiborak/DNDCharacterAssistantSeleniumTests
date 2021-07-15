@@ -47,8 +47,18 @@ public class CharacterCreationTest {
 		driver.findElement(By.id("passwordInput")).sendKeys("a");
 		driver.findElement(By.id("loginSubmitButton")).click();
 		
-		assertEquals("Login", driver.findElement(By.id("LoginHeader")).getText());
+		while(!isAlertPresent()) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+
+			}
+		}
 		
+		driver.switchTo().alert().accept();
+		
+		assertEquals("Login", driver.findElement(By.id("LoginHeader")).getText());
+				
 		driver.findElement(By.id("usernameInput")).sendKeys("admin");
 		driver.findElement(By.id("passwordInput")).sendKeys("a");
 		driver.findElement(By.id("loginSubmitButton")).click();
